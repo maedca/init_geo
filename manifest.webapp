@@ -1,43 +1,27 @@
 {
-  "name": "Chrono",
-  "description": "Gaia Chronometer Example App",
+  "name": "Geo",
+  "description": "geolocation",
   "launch_path": "/index.html",  
   "developer": {
-    "name": "Luca Greco <luca.greco@alcacoop.it>",
-    "url": "https://github.com/rpl/gaia-chrono"
+    "name": "Willy Aguirre",
+    "url": "https://github.com/Droid2Fox/init_geo"
   },
   "installs_allowed_from": ["*"],
-  "locales": {
-    "ar": {
-      "name": "Chrono",
-      "description": "Gaia Chronometer Example App"
-    },
+  "locales": {    
     "en-US": {
-      "name": "Chrono",
-      "description": "Gaia Chronometer Example App"
-    },
-    "fr": {
-      "name": "Chrono",
-      "description": "Gaia Chronometer Example App"
-    },
-    "zh-TW": {
-      "name": "Chrono",
-      "description": "Gaia Chronometer Example App"
-    },
-    "it": {
-      "name": "Cronometro",
-      "description": "Applicazione di Esempio Cronometro per Gaia"
+      "name": "Geo",
+      "description": "geolocation"
     }   
   },
   "default_locale": "en-US",
   "icons": {
-    "120": "/icons/chrono-120.png",
-    "60": "/icons/chrono-60.png"
+    "120": "/icons/120.png",
+    "60": "/icons/60.png"
   },
-  "orientation": "portrait-primary",
+  "orientation": ["portrait"], 
   "permissions": {
     "geolocation": {
-      "description": "Necesita ubicarte"     
+      "description": "geolocation"     
     }
   }
 }

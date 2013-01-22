@@ -1,9 +1,10 @@
 @import url(gaia/fonts.css);
-@import url(gaia/widgets/headers.css);
-@import url(gaia/widgets/toolbars.css);
-@import url(gaia/widgets/buttons.css);
-@import url(gaia/widgets/drawer/style.css);
-@import url(gaia/widgets/lists/style.css);
+@import url(gaia/style/headers.css);
+@import url(gaia/style/toolbars.css);
+@import url(gaia/style/buttons.css);
+@import url(gaia/style/drawer/style.css);
+@import url(gaia/style/lists/style.css);
+@import url(gaia/style/toolbars.css);
 
 @import url(chrono.css);
 

@@ -1,15 +1,39 @@
-// For any third party dependencies, like jQuery, place them in the lib folder.
+function geo() {
 
-// Configure loading modules from the lib directory,
-// except for 'app' ones, which are in a sibling
-// directory.
-requirejs.config({
-    baseUrl: 'js/lib',
-    paths: {
-        app: '../app'
-    }
-});
+	document.getElementById('basicMap').innerHTML = "";
+	document.getElementById('anzeige').innerHTML = "";
 
-// Start loading the main app file. Put all of
-// your application logic in there.
-requirejs(['app/main']);
+    map = new OpenLayers.Map("basicMap");
+    var mapnik = new OpenLayers.Layer.OSM();
+    map.addLayer(mapnik);
+
+
+    navigator.geolocation.getCurrentPosition(function (position) {
+        document.getElementById('anzeige').innerHTML = "Latitude: " + position.coords.latitude + "   Longitude: " + position.coords.longitude + "<p>";
+        var lonLat = new OpenLayers.LonLat(position.coords.longitude,
+        position.coords.latitude)
+            .transform(
+        new OpenLayers.Projection("EPSG:4326"), //transform from WGS 1984
+        map.getProjectionObject() //to Spherical Mercator Projection
+        );
+
+        markers.addMarker(new OpenLayers.Marker(lonLat));
+
+        map.setCenter(lonLat, 14 // Zoom level
+        );
+
+    });
+    //map = new OpenLayers.Map("basicMap");
+    //var mapnik = new OpenLayers.Layer.OSM();
+    //map.addLayer(mapnik);
+    map.setCenter(new
+    OpenLayers.LonLat(3, 3) // Center of the map
+    .transform(
+    new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+    new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
+    ), 15 // Zoom level
+    );
+    var markers = new OpenLayers.Layer.Markers("Markers");
+    map.addLayer(markers);
+
+}
